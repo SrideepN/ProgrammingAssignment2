@@ -1,9 +1,13 @@
+
+##The input should be a matrix which is specified as x
 makeCacheMatrix <- function(x = matrix()) {
-  i <- NULL
+  ##The the output is specified as null i.e. i
+    i <- NULL
   set <- function(y) {
     x <<- y
     i <<- NULL
   }
+  ##Here is to find the inverse of inputed matrix 
   get <- function() x
   setinv <- function(inverse) i <<- inverse
   getinv <- function() i
@@ -19,7 +23,7 @@ CacheSolve <- function(x, ...) {
     return(i)
   }
   data <- x$get()
-  i <- solve(data) %*% data
+  i <- solve(data,...)
   x$setinv(i)
   i
 }
